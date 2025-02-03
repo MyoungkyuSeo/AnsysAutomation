@@ -1,0 +1,5 @@
+Flask==3.1.0
+pandas==2.2.3
+plotly==6.0.0
+dash==2.9.3
+ansys-mapdl-core==0.67.0
