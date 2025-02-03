@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAE Results Dashboard</title>
+    <!-- Load Plotly from CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>CAE Nodal Stress Visualization</h1>
+    <div id="graph"></div>
+    <script>
+        // Parse the JSON graph data passed from Flask
+        var graphData = JSON.parse('{{ graphJSON | tojson | safe }}');
+        // Render the Plotly graph in the div with id "graph"
+        Plotly.newPlot('graph', graphData.data, graphData.layout);
+    </script>
+</body>
+</html>
